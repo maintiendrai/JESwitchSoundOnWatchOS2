@@ -71,22 +71,18 @@
 - (void)willActivate {
     
     if (!_audioUrl) {
-        NSLog(@"click.........11");
-        _audioUrl = [self originalURL].absoluteString;
-        [self saveFileURL:_audioUrl];
+        [self saveFileURL:[self originalURL].absoluteString];
         return;
     }
     
     if ([_fileManager fileExistsAtPath:[self currentSaveAudioURL].absoluteString]) {
-        if ([[self currentAudioURL] isEqualToString:_audioUrl] && [_audioUrl isEqualToString:[self originalURL].absoluteString]) {
-            NSLog(@"...................2");
-            [self playBtnTapped];
-        } else {
-            NSLog(@".....................3");
+        if ([self currentAudioURL] && ![[self currentAudioURL] isEqualToString:_audioUrl]) {
+            //appgroup的串如果有的话 跟路径不一致，就要重新下载
             [self saveFileURL:[self currentAudioURL]];
+        } else {
+            [self playBtnTapped];
         }
     }
-    
 
 }
 
@@ -142,7 +138,6 @@
 }
 
 - (void)playBtnTapped {
-    NSLog(@"............  %@", [self currentSaveAudioURL]);
     [self presentMediaPlayerControllerWithURL:[self currentSaveAudioURL] options:nil completion:^(BOOL didPlayToEnd, NSTimeInterval endTime, NSError * _Nullable error) {
         
     }];
