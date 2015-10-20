@@ -72,6 +72,8 @@
     
     if (!_audioUrl) {
         [self saveFileURL:[self originalURL].absoluteString];
+#warning alert  
+        //当url没有的时候，提醒用户去一键开锁同步声纹
         return;
     }
     
@@ -104,6 +106,10 @@
         dispatch_async(dispatch_get_main_queue(), ^{
             [data writeToURL:saveUrl atomically:YES];
         });
+        if (error) {
+#warning alert
+        //通知用户网络有异常，确保iPhone连接网络正常，且watch跟iPhone位置比较接近
+        }
         [self playBtnTapped];
     }];
     [_task resume];
