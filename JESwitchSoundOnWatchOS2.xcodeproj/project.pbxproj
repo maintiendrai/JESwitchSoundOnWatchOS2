@@ -30,8 +30,6 @@
 		84161B271BD5E753003C6455 /* MMWormholeSessionContextTransiting.m in Sources */ = {isa = PBXBuildFile; fileRef = 84161B1D1BD5E753003C6455 /* MMWormholeSessionContextTransiting.m */; settings = {ASSET_TAGS = (); }; };
 		84161B281BD5E753003C6455 /* MMWormholeSessionFileTransiting.m in Sources */ = {isa = PBXBuildFile; fileRef = 84161B1F1BD5E753003C6455 /* MMWormholeSessionFileTransiting.m */; settings = {ASSET_TAGS = (); }; };
 		84161B291BD5E753003C6455 /* MMWormholeSessionMessageTransiting.m in Sources */ = {isa = PBXBuildFile; fileRef = 84161B211BD5E753003C6455 /* MMWormholeSessionMessageTransiting.m */; settings = {ASSET_TAGS = (); }; };
-		84161B2D1BD5E93C003C6455 /* elevator.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 84161B2B1BD5E93C003C6455 /* elevator.mp3 */; settings = {ASSET_TAGS = (); }; };
-		84161B2E1BD5E93C003C6455 /* original.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 84161B2C1BD5E93C003C6455 /* original.mp3 */; settings = {ASSET_TAGS = (); }; };
 		84161B321BD5EA25003C6455 /* watch_sound_button.png in Resources */ = {isa = PBXBuildFile; fileRef = 84161B301BD5EA25003C6455 /* watch_sound_button.png */; settings = {ASSET_TAGS = (); }; };
 		84161B331BD5EA25003C6455 /* watch_sound_button_h.png in Resources */ = {isa = PBXBuildFile; fileRef = 84161B311BD5EA25003C6455 /* watch_sound_button_h.png */; settings = {ASSET_TAGS = (); }; };
 		84161B341BD5EAB0003C6455 /* MMWormhole.m in Sources */ = {isa = PBXBuildFile; fileRef = 84161B151BD5E753003C6455 /* MMWormhole.m */; };
@@ -41,6 +39,8 @@
 		84161B381BD5EAB0003C6455 /* MMWormholeSessionContextTransiting.m in Sources */ = {isa = PBXBuildFile; fileRef = 84161B1D1BD5E753003C6455 /* MMWormholeSessionContextTransiting.m */; };
 		84161B391BD5EAB0003C6455 /* MMWormholeSessionFileTransiting.m in Sources */ = {isa = PBXBuildFile; fileRef = 84161B1F1BD5E753003C6455 /* MMWormholeSessionFileTransiting.m */; };
 		84161B3A1BD5EAB0003C6455 /* MMWormholeSessionMessageTransiting.m in Sources */ = {isa = PBXBuildFile; fileRef = 84161B211BD5E753003C6455 /* MMWormholeSessionMessageTransiting.m */; };
+		848EB93F1BD6222800B2A1FD /* elevator.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 848EB93D1BD6222800B2A1FD /* elevator.mp3 */; settings = {ASSET_TAGS = (); }; };
+		848EB9401BD6222800B2A1FD /* original.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 848EB93E1BD6222800B2A1FD /* original.mp3 */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -129,12 +129,12 @@
 		84161B201BD5E753003C6455 /* MMWormholeSessionMessageTransiting.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMWormholeSessionMessageTransiting.h; sourceTree = "<group>"; };
 		84161B211BD5E753003C6455 /* MMWormholeSessionMessageTransiting.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMWormholeSessionMessageTransiting.m; sourceTree = "<group>"; };
 		84161B221BD5E753003C6455 /* MMWormholeTransiting.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMWormholeTransiting.h; sourceTree = "<group>"; };
-		84161B2B1BD5E93C003C6455 /* elevator.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = elevator.mp3; sourceTree = "<group>"; };
-		84161B2C1BD5E93C003C6455 /* original.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = original.mp3; sourceTree = "<group>"; };
 		84161B301BD5EA25003C6455 /* watch_sound_button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = watch_sound_button.png; sourceTree = "<group>"; };
 		84161B311BD5EA25003C6455 /* watch_sound_button_h.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = watch_sound_button_h.png; sourceTree = "<group>"; };
 		84161B3B1BD5EAE0003C6455 /* JESwitchSoundOnWatchOS2.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = JESwitchSoundOnWatchOS2.entitlements; sourceTree = "<group>"; };
 		84161B3C1BD5EB4A003C6455 /* watchos Extension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = "watchos Extension.entitlements"; sourceTree = "<group>"; };
+		848EB93D1BD6222800B2A1FD /* elevator.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = elevator.mp3; sourceTree = "<group>"; };
+		848EB93E1BD6222800B2A1FD /* original.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = original.mp3; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -215,6 +215,7 @@
 		84161AF21BD5E4AC003C6455 /* watchos Extension */ = {
 			isa = PBXGroup;
 			children = (
+				848EB93B1BD6222800B2A1FD /* Resources */,
 				84161B3C1BD5EB4A003C6455 /* watchos Extension.entitlements */,
 				84161AF51BD5E4AC003C6455 /* InterfaceController.h */,
 				84161AF61BD5E4AC003C6455 /* InterfaceController.m */,
@@ -228,7 +229,6 @@
 				84161B021BD5E4AC003C6455 /* ComplicationController.m */,
 				84161B041BD5E4AC003C6455 /* Assets.xcassets */,
 				84161B061BD5E4AC003C6455 /* Info.plist */,
-				84161B2A1BD5E93C003C6455 /* sounds */,
 				84161AF31BD5E4AC003C6455 /* Supporting Files */,
 			);
 			path = "watchos Extension";
@@ -272,15 +272,6 @@
 			path = MMWormhole;
 			sourceTree = "<group>";
 		};
-		84161B2A1BD5E93C003C6455 /* sounds */ = {
-			isa = PBXGroup;
-			children = (
-				84161B2B1BD5E93C003C6455 /* elevator.mp3 */,
-				84161B2C1BD5E93C003C6455 /* original.mp3 */,
-			);
-			path = sounds;
-			sourceTree = "<group>";
-		};
 		84161B2F1BD5EA25003C6455 /* image */ = {
 			isa = PBXGroup;
 			children = (
@@ -288,6 +279,23 @@
 				84161B311BD5EA25003C6455 /* watch_sound_button_h.png */,
 			);
 			path = image;
+			sourceTree = "<group>";
+		};
+		848EB93B1BD6222800B2A1FD /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				848EB93C1BD6222800B2A1FD /* sounds */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		848EB93C1BD6222800B2A1FD /* sounds */ = {
+			isa = PBXGroup;
+			children = (
+				848EB93D1BD6222800B2A1FD /* elevator.mp3 */,
+				848EB93E1BD6222800B2A1FD /* original.mp3 */,
+			);
+			path = sounds;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -425,8 +433,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				84161B2D1BD5E93C003C6455 /* elevator.mp3 in Resources */,
-				84161B2E1BD5E93C003C6455 /* original.mp3 in Resources */,
+				848EB93F1BD6222800B2A1FD /* elevator.mp3 in Resources */,
+				848EB9401BD6222800B2A1FD /* original.mp3 in Resources */,
 				84161B051BD5E4AC003C6455 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -710,6 +718,7 @@
 				84161ADF1BD5E458003C6455 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		84161B0A1BD5E4AD003C6455 /* Build configuration list for PBXNativeTarget "watchos Extension" */ = {
 			isa = XCConfigurationList;
@@ -718,6 +727,7 @@
 				84161B0C1BD5E4AD003C6455 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		84161B0E1BD5E4AD003C6455 /* Build configuration list for PBXNativeTarget "watchos" */ = {
 			isa = XCConfigurationList;
@@ -726,6 +736,7 @@
 				84161B101BD5E4AD003C6455 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

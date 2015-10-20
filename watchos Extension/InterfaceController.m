@@ -14,6 +14,7 @@
 
 @interface InterfaceController()<NSURLSessionDelegate> {
     NSURLSessionDataTask *_task;
+    NSFileManager *_fileManager;
 }
 
 @property (nonatomic, strong) MMWormhole *wormhole;
@@ -29,6 +30,8 @@
 
 - (void)awakeWithContext:(id)context {
     [super awakeWithContext:context];
+    
+    _fileManager = [NSFileManager defaultManager];
     
     // You are required to initialize the shared listening wormhole before creating a
     // WatchConnectivity session transiting wormhole, as we are below.
@@ -66,36 +69,53 @@
 
 
 - (void)willActivate {
+    
+//    if (!_audioUrl || ![self currentAudioURL]) {
+//        [self playBtnTapped];
+//    }
+    
     if (!_audioUrl) {
+        NSLog(@"click.........11");
+        _audioUrl = [self originalURL].absoluteString;
+        [self saveFileURL:_audioUrl];
         return;
     }
-    if ([[self currentAudioURL] isEqualToString:_audioUrl]) {
-        [self playBtnTapped];
-    } else {
-        
-        [self saveFileURL:_audioUrl];
+    
+    if ([_fileManager fileExistsAtPath:[self currentSaveAudioURL].absoluteString]) {
+        if ([[self currentAudioURL] isEqualToString:_audioUrl] && [_audioUrl isEqualToString:[self originalURL].absoluteString]) {
+            NSLog(@"...................2");
+            [self playBtnTapped];
+        } else {
+            NSLog(@".....................3");
+            [self saveFileURL:[self currentAudioURL]];
+        }
     }
+    
+//    if ( ([_audioUrl isEqualToString:[self originalURL].absoluteString] || [[self currentAudioURL] isEqualToString:_audioUrl])
+//        && [_fileManager fileExistsAtPath:[self currentSaveAudioURL].absoluteString]) {
+//        NSLog(@"...................2");
+//        [self playBtnTapped];
+//    } else {
+//        NSLog(@".....................3");
+//        [self saveFileURL:_audioUrl];
+//    }
 }
 
 
 - (void)saveFileURL:(NSString *)url {
     
-    _audioUrl = [self currentAudioURL];
-    NSFileManager *defaultManager = [NSFileManager defaultManager];
+    _audioUrl = url;
     
     NSURL *saveUrl = [self currentSaveAudioURL];
     
-    NSLog(@".................  %@", saveUrl.absoluteString);
-    
-    if ([defaultManager fileExistsAtPath:saveUrl.absoluteString]) {
-        [defaultManager removeItemAtURL:saveUrl error:nil];
+    if ([_fileManager fileExistsAtPath:saveUrl.absoluteString]) {
+        [_fileManager removeItemAtURL:saveUrl error:nil];
     }
     
     NSURLSessionConfiguration* configuration = [NSURLSessionConfiguration defaultSessionConfiguration];
     NSURLSession* session = [NSURLSession sessionWithConfiguration:configuration delegate:self delegateQueue:nil];
     
     _task = [session dataTaskWithURL:[NSURL URLWithString:url] completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
-        NSLog(@"xxxxxx...");
         dispatch_async(dispatch_get_main_queue(), ^{
             [data writeToURL:saveUrl atomically:YES];
         });
@@ -119,7 +139,7 @@
 
 
 - (NSURL *)currentSaveAudioURL {
-    return [[[NSFileManager defaultManager] containerURLForSecurityApplicationGroupIdentifier:@"group.com.lilkr.lilkrtest"]
+    return [[_fileManager containerURLForSecurityApplicationGroupIdentifier:@"group.com.lilkr.lilkrtest"]
             URLByAppendingPathComponent:@"aaa.mp3"];
 }
 
@@ -128,7 +148,12 @@
     [self playBtnTapped];
 }
 
+- (NSURL *)originalURL {
+    return [NSURL fileURLWithPath:[[NSBundle mainBundle] pathForResource:@"original" ofType:@"mp3"]];
+}
+
 - (void)playBtnTapped {
+    NSLog(@"............  %@", [self currentSaveAudioURL]);
     [self presentMediaPlayerControllerWithURL:[self currentSaveAudioURL] options:nil completion:^(BOOL didPlayToEnd, NSTimeInterval endTime, NSError * _Nullable error) {
         
     }];

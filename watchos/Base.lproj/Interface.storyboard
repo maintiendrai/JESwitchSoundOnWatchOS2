@@ -25,8 +25,17 @@
             <objects>
                 <glanceController spacing="0.0" id="0uZ-2p-rRc" customClass="GlanceController">
                     <items>
-                        <group alignment="left" id="t8f-Gd-c4y"/>
-                        <group alignment="left" id="uCw-4Q-Ouw"/>
+                        <group alignment="left" id="t8f-Gd-c4y">
+                            <items>
+                                <imageView width="48" height="48" alignment="left" image="watch_sound_button_h.png" id="UKS-sm-gfc"/>
+                                <label alignment="center" verticalAlignment="center" text="微居" textAlignment="justified" id="lqh-YV-RTE"/>
+                            </items>
+                        </group>
+                        <group alignment="left" id="uCw-4Q-Ouw">
+                            <items>
+                                <imageView width="100" height="100" alignment="center" verticalAlignment="center" image="watch_sound_button.png" id="ZCO-4v-ynw"/>
+                            </items>
+                        </group>
                     </items>
                     <edgeInsets key="margins" left="0.0" right="0.0" top="0.0" bottom="14"/>
                 </glanceController>
