@@ -23,6 +23,13 @@
 		84161B031BD5E4AC003C6455 /* ComplicationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84161B021BD5E4AC003C6455 /* ComplicationController.m */; };
 		84161B051BD5E4AC003C6455 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 84161B041BD5E4AC003C6455 /* Assets.xcassets */; };
 		84161B091BD5E4AC003C6455 /* watchos.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 84161AE21BD5E4AC003C6455 /* watchos.app */; };
+		84161B231BD5E753003C6455 /* MMWormhole.m in Sources */ = {isa = PBXBuildFile; fileRef = 84161B151BD5E753003C6455 /* MMWormhole.m */; settings = {ASSET_TAGS = (); }; };
+		84161B241BD5E753003C6455 /* MMWormholeCoordinatedFileTransiting.m in Sources */ = {isa = PBXBuildFile; fileRef = 84161B171BD5E753003C6455 /* MMWormholeCoordinatedFileTransiting.m */; settings = {ASSET_TAGS = (); }; };
+		84161B251BD5E753003C6455 /* MMWormholeFileTransiting.m in Sources */ = {isa = PBXBuildFile; fileRef = 84161B191BD5E753003C6455 /* MMWormholeFileTransiting.m */; settings = {ASSET_TAGS = (); }; };
+		84161B261BD5E753003C6455 /* MMWormholeSession.m in Sources */ = {isa = PBXBuildFile; fileRef = 84161B1B1BD5E753003C6455 /* MMWormholeSession.m */; settings = {ASSET_TAGS = (); }; };
+		84161B271BD5E753003C6455 /* MMWormholeSessionContextTransiting.m in Sources */ = {isa = PBXBuildFile; fileRef = 84161B1D1BD5E753003C6455 /* MMWormholeSessionContextTransiting.m */; settings = {ASSET_TAGS = (); }; };
+		84161B281BD5E753003C6455 /* MMWormholeSessionFileTransiting.m in Sources */ = {isa = PBXBuildFile; fileRef = 84161B1F1BD5E753003C6455 /* MMWormholeSessionFileTransiting.m */; settings = {ASSET_TAGS = (); }; };
+		84161B291BD5E753003C6455 /* MMWormholeSessionMessageTransiting.m in Sources */ = {isa = PBXBuildFile; fileRef = 84161B211BD5E753003C6455 /* MMWormholeSessionMessageTransiting.m */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -96,6 +103,21 @@
 		84161B021BD5E4AC003C6455 /* ComplicationController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ComplicationController.m; sourceTree = "<group>"; };
 		84161B041BD5E4AC003C6455 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		84161B061BD5E4AC003C6455 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		84161B141BD5E753003C6455 /* MMWormhole.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMWormhole.h; sourceTree = "<group>"; };
+		84161B151BD5E753003C6455 /* MMWormhole.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMWormhole.m; sourceTree = "<group>"; };
+		84161B161BD5E753003C6455 /* MMWormholeCoordinatedFileTransiting.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMWormholeCoordinatedFileTransiting.h; sourceTree = "<group>"; };
+		84161B171BD5E753003C6455 /* MMWormholeCoordinatedFileTransiting.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMWormholeCoordinatedFileTransiting.m; sourceTree = "<group>"; };
+		84161B181BD5E753003C6455 /* MMWormholeFileTransiting.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMWormholeFileTransiting.h; sourceTree = "<group>"; };
+		84161B191BD5E753003C6455 /* MMWormholeFileTransiting.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMWormholeFileTransiting.m; sourceTree = "<group>"; };
+		84161B1A1BD5E753003C6455 /* MMWormholeSession.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMWormholeSession.h; sourceTree = "<group>"; };
+		84161B1B1BD5E753003C6455 /* MMWormholeSession.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMWormholeSession.m; sourceTree = "<group>"; };
+		84161B1C1BD5E753003C6455 /* MMWormholeSessionContextTransiting.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMWormholeSessionContextTransiting.h; sourceTree = "<group>"; };
+		84161B1D1BD5E753003C6455 /* MMWormholeSessionContextTransiting.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMWormholeSessionContextTransiting.m; sourceTree = "<group>"; };
+		84161B1E1BD5E753003C6455 /* MMWormholeSessionFileTransiting.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMWormholeSessionFileTransiting.h; sourceTree = "<group>"; };
+		84161B1F1BD5E753003C6455 /* MMWormholeSessionFileTransiting.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMWormholeSessionFileTransiting.m; sourceTree = "<group>"; };
+		84161B201BD5E753003C6455 /* MMWormholeSessionMessageTransiting.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMWormholeSessionMessageTransiting.h; sourceTree = "<group>"; };
+		84161B211BD5E753003C6455 /* MMWormholeSessionMessageTransiting.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMWormholeSessionMessageTransiting.m; sourceTree = "<group>"; };
+		84161B221BD5E753003C6455 /* MMWormholeTransiting.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMWormholeTransiting.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -139,6 +161,7 @@
 		84161AC81BD5E458003C6455 /* JESwitchSoundOnWatchOS2 */ = {
 			isa = PBXGroup;
 			children = (
+				84161B121BD5E753003C6455 /* Vendor */,
 				84161ACC1BD5E458003C6455 /* AppDelegate.h */,
 				84161ACD1BD5E458003C6455 /* AppDelegate.m */,
 				84161ACF1BD5E458003C6455 /* ViewController.h */,
@@ -196,6 +219,36 @@
 				84161AF41BD5E4AC003C6455 /* PushNotificationPayload.apns */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		84161B121BD5E753003C6455 /* Vendor */ = {
+			isa = PBXGroup;
+			children = (
+				84161B131BD5E753003C6455 /* MMWormhole */,
+			);
+			path = Vendor;
+			sourceTree = "<group>";
+		};
+		84161B131BD5E753003C6455 /* MMWormhole */ = {
+			isa = PBXGroup;
+			children = (
+				84161B141BD5E753003C6455 /* MMWormhole.h */,
+				84161B151BD5E753003C6455 /* MMWormhole.m */,
+				84161B161BD5E753003C6455 /* MMWormholeCoordinatedFileTransiting.h */,
+				84161B171BD5E753003C6455 /* MMWormholeCoordinatedFileTransiting.m */,
+				84161B181BD5E753003C6455 /* MMWormholeFileTransiting.h */,
+				84161B191BD5E753003C6455 /* MMWormholeFileTransiting.m */,
+				84161B1A1BD5E753003C6455 /* MMWormholeSession.h */,
+				84161B1B1BD5E753003C6455 /* MMWormholeSession.m */,
+				84161B1C1BD5E753003C6455 /* MMWormholeSessionContextTransiting.h */,
+				84161B1D1BD5E753003C6455 /* MMWormholeSessionContextTransiting.m */,
+				84161B1E1BD5E753003C6455 /* MMWormholeSessionFileTransiting.h */,
+				84161B1F1BD5E753003C6455 /* MMWormholeSessionFileTransiting.m */,
+				84161B201BD5E753003C6455 /* MMWormholeSessionMessageTransiting.h */,
+				84161B211BD5E753003C6455 /* MMWormholeSessionMessageTransiting.m */,
+				84161B221BD5E753003C6455 /* MMWormholeTransiting.h */,
+			);
+			path = MMWormhole;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -329,9 +382,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				84161B281BD5E753003C6455 /* MMWormholeSessionFileTransiting.m in Sources */,
 				84161AD11BD5E458003C6455 /* ViewController.m in Sources */,
+				84161B251BD5E753003C6455 /* MMWormholeFileTransiting.m in Sources */,
+				84161B271BD5E753003C6455 /* MMWormholeSessionContextTransiting.m in Sources */,
 				84161ACE1BD5E458003C6455 /* AppDelegate.m in Sources */,
+				84161B241BD5E753003C6455 /* MMWormholeCoordinatedFileTransiting.m in Sources */,
+				84161B231BD5E753003C6455 /* MMWormhole.m in Sources */,
 				84161ACB1BD5E458003C6455 /* main.m in Sources */,
+				84161B291BD5E753003C6455 /* MMWormholeSessionMessageTransiting.m in Sources */,
+				84161B261BD5E753003C6455 /* MMWormholeSession.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
