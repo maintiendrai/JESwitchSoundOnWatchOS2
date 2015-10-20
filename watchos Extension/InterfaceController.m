@@ -70,10 +70,6 @@
 
 - (void)willActivate {
     
-//    if (!_audioUrl || ![self currentAudioURL]) {
-//        [self playBtnTapped];
-//    }
-    
     if (!_audioUrl) {
         NSLog(@"click.........11");
         _audioUrl = [self originalURL].absoluteString;
@@ -91,14 +87,7 @@
         }
     }
     
-//    if ( ([_audioUrl isEqualToString:[self originalURL].absoluteString] || [[self currentAudioURL] isEqualToString:_audioUrl])
-//        && [_fileManager fileExistsAtPath:[self currentSaveAudioURL].absoluteString]) {
-//        NSLog(@"...................2");
-//        [self playBtnTapped];
-//    } else {
-//        NSLog(@".....................3");
-//        [self saveFileURL:_audioUrl];
-//    }
+
 }
 
 
