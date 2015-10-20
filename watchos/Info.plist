@@ -28,7 +28,7 @@
 		<string>UIInterfaceOrientationPortraitUpsideDown</string>
 	</array>
 	<key>WKCompanionAppBundleIdentifier</key>
-	<string>com.maintiendrai.JESwitchSoundOnWatchOS2</string>
+	<string>com.lilkr.lilkrtest</string>
 	<key>WKWatchKitApp</key>
 	<true/>
 </dict>
