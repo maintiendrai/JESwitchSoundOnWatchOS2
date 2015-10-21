@@ -41,6 +41,7 @@
 		84161B3A1BD5EAB0003C6455 /* MMWormholeSessionMessageTransiting.m in Sources */ = {isa = PBXBuildFile; fileRef = 84161B211BD5E753003C6455 /* MMWormholeSessionMessageTransiting.m */; };
 		848EB93F1BD6222800B2A1FD /* elevator.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 848EB93D1BD6222800B2A1FD /* elevator.mp3 */; settings = {ASSET_TAGS = (); }; };
 		848EB9401BD6222800B2A1FD /* original.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 848EB93E1BD6222800B2A1FD /* original.mp3 */; settings = {ASSET_TAGS = (); }; };
+		848EB9421BD71DCD00B2A1FD /* watch_glance_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 848EB9411BD71DCD00B2A1FD /* watch_glance_icon.png */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -135,6 +136,7 @@
 		84161B3C1BD5EB4A003C6455 /* watchos Extension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = "watchos Extension.entitlements"; sourceTree = "<group>"; };
 		848EB93D1BD6222800B2A1FD /* elevator.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = elevator.mp3; sourceTree = "<group>"; };
 		848EB93E1BD6222800B2A1FD /* original.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = original.mp3; sourceTree = "<group>"; };
+		848EB9411BD71DCD00B2A1FD /* watch_glance_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = watch_glance_icon.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -275,6 +277,7 @@
 		84161B2F1BD5EA25003C6455 /* image */ = {
 			isa = PBXGroup;
 			children = (
+				848EB9411BD71DCD00B2A1FD /* watch_glance_icon.png */,
 				84161B301BD5EA25003C6455 /* watch_sound_button.png */,
 				84161B311BD5EA25003C6455 /* watch_sound_button_h.png */,
 			);
@@ -425,6 +428,7 @@
 				84161B331BD5EA25003C6455 /* watch_sound_button_h.png in Resources */,
 				84161B321BD5EA25003C6455 /* watch_sound_button.png in Resources */,
 				84161AE81BD5E4AC003C6455 /* Assets.xcassets in Resources */,
+				848EB9421BD71DCD00B2A1FD /* watch_glance_icon.png in Resources */,
 				84161AE61BD5E4AC003C6455 /* Interface.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

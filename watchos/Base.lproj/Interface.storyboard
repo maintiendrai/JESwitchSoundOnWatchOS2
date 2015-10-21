@@ -10,12 +10,16 @@
             <objects>
                 <controller id="AgC-eL-Hgc" customClass="InterfaceController">
                     <items>
+                        <label alignment="left" text="Label" id="7dX-Xr-vmn"/>
                         <button width="1" alignment="left" backgroundImage="watch_sound_button.png" id="WDJ-aM-t4x">
                             <connections>
                                 <action selector="playBtnPressed:" destination="AgC-eL-Hgc" id="dYa-GP-1Mp"/>
                             </connections>
                         </button>
                     </items>
+                    <connections>
+                        <outlet property="selectionLabel" destination="7dX-Xr-vmn" id="YLu-Lc-Pq6"/>
+                    </connections>
                 </controller>
             </objects>
             <point key="canvasLocation" x="235" y="347"/>
@@ -27,13 +31,13 @@
                     <items>
                         <group alignment="left" id="t8f-Gd-c4y">
                             <items>
-                                <imageView width="48" height="48" alignment="left" image="watch_sound_button_h.png" id="UKS-sm-gfc"/>
                                 <label alignment="center" verticalAlignment="center" text="微居" textAlignment="justified" id="lqh-YV-RTE"/>
+                                <imageView width="40" height="40" alignment="left" image="watch_glance_icon.png" id="UKS-sm-gfc"/>
                             </items>
                         </group>
                         <group alignment="left" id="uCw-4Q-Ouw">
                             <items>
-                                <imageView width="100" height="100" alignment="center" verticalAlignment="center" image="watch_sound_button.png" id="ZCO-4v-ynw"/>
+                                <imageView width="100" height="100" alignment="center" image="watch_sound_button.png" id="ZCO-4v-ynw"/>
                             </items>
                         </group>
                     </items>

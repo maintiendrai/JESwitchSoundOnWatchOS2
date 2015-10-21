@@ -15,11 +15,13 @@
 @interface InterfaceController()<NSURLSessionDelegate> {
     NSURLSessionDataTask *_task;
     NSFileManager *_fileManager;
+    BOOL _flag;
 }
 
 @property (nonatomic, strong) MMWormhole *wormhole;
 @property (nonatomic, strong) MMWormholeSession *listeningWormhole;
 @property (nonatomic, strong) NSString* audioUrl;
+
 
 @property (nonatomic, weak) IBOutlet WKInterfaceLabel *selectionLabel;
 
@@ -31,6 +33,8 @@
 - (void)awakeWithContext:(id)context {
     [super awakeWithContext:context];
     
+    _flag = NO;
+    NSLog(@"........................1");
     _fileManager = [NSFileManager defaultManager];
     
     // You are required to initialize the shared listening wormhole before creating a
@@ -59,6 +63,7 @@
         if (string != nil) {
             [self.selectionLabel setText:string];
         }
+        NSLog(@".......................2");
         [self saveFileURL:string];
     }];
     
@@ -67,23 +72,48 @@
     [self.listeningWormhole activateSessionListening];
 }
 
+- (void)didAppear {
+    NSLog(@"....................did");
+}
+
 
 - (void)willActivate {
+    NSLog(@"....................111");
+    
+    [super willActivate];
+    
+    if (_flag) {
+        _flag = NO;
+        NSLog(@".........................return");
+        return;
+    }
     
     if (!_audioUrl) {
+        NSLog(@"....................333");
         [self saveFileURL:[self originalURL].absoluteString];
-#warning alert  
+        [self.selectionLabel setText:@"4"];
+#warning alert
         //当url没有的时候，提醒用户去一键开锁同步声纹
         return;
     }
+
+    NSLog(@"=========================  %@", [self currentSaveAudioURL].absoluteString);
     
     if ([_fileManager fileExistsAtPath:[self currentSaveAudioURL].absoluteString]) {
         if ([self currentAudioURL] && ![[self currentAudioURL] isEqualToString:_audioUrl]) {
             //appgroup的串如果有的话 跟路径不一致，就要重新下载
             [self saveFileURL:[self currentAudioURL]];
+            NSLog(@"...................K1");
+            [self.selectionLabel setText:@"1"];
         } else {
+            NSLog(@"...................K2");
+            [self.selectionLabel setText:@"2"];
             [self playBtnTapped];
         }
+    } else {
+        NSLog(@".....................K3");
+        [self.selectionLabel setText:@"3"];
+        [self playBtnTapped];
     }
 
 }
@@ -151,6 +181,12 @@
         sleep(3);
         [self dismissMediaPlayerController];
     });
+}
+
+- (void)dismissMediaPlayerController {
+    NSLog(@".................dismiss");
+    _flag = YES;
+    [super dismissMediaPlayerController];
 }
 
 @end
