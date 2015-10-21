@@ -34,7 +34,6 @@
     [super awakeWithContext:context];
     
     _flag = NO;
-    NSLog(@"........................1");
     _fileManager = [NSFileManager defaultManager];
     
     // You are required to initialize the shared listening wormhole before creating a
@@ -63,7 +62,6 @@
         if (string != nil) {
             [self.selectionLabel setText:string];
         }
-        NSLog(@".......................2");
         [self saveFileURL:string];
     }];
     
@@ -73,19 +71,6 @@
     
     [self saveFileURL:[self originalURL].absoluteString];
 }
-
-
-//- (void)willActivate {
-//    if (!_audioUrl) {
-//        return;
-//    }
-//    if ([[self currentAudioURL] isEqualToString:_audioUrl]) {
-//        [self playBtnTapped];
-//    } else {
-//        
-//        [self saveFileURL:_audioUrl];
-//    }
-//}
 
 
 - (void)willActivate {
@@ -124,7 +109,6 @@
     NSURLSessionConfiguration* configuration = [NSURLSessionConfiguration defaultSessionConfiguration];
     NSURLSession* session = [NSURLSession sessionWithConfiguration:configuration delegate:self delegateQueue:nil];
     
-    NSLog(@"aaaa................ %@", [NSURL URLWithString:url]);
     _task = [session dataTaskWithURL:[NSURL URLWithString:url] completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
         NSLog(@"finish");
         dispatch_async(dispatch_get_main_queue(), ^{
@@ -134,7 +118,6 @@
 #warning alert
         //通知用户网络有异常，确保iPhone连接网络正常，且watch跟iPhone位置比较接近
         } else {
-            NSLog(@".............play");
             [self playBtnTapped];
         }
     }];
@@ -171,7 +154,7 @@
 
 - (void)playBtnTapped {
     dispatch_async(dispatch_get_main_queue(), ^{
-        [self presentMediaPlayerControllerWithURL:[self originalURL] options:nil completion:^(BOOL didPlayToEnd, NSTimeInterval endTime, NSError * _Nullable error) {
+        [self presentMediaPlayerControllerWithURL:[self currentSaveAudioURL] options:nil completion:^(BOOL didPlayToEnd, NSTimeInterval endTime, NSError * _Nullable error) {
             
         }];
     });
