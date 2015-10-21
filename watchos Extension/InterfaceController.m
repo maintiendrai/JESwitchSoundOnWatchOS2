@@ -70,52 +70,44 @@
     // Make sure we are activating the listening wormhole so that it will receive new messages from
     // the WatchConnectivity framework.
     [self.listeningWormhole activateSessionListening];
+    
+    [self saveFileURL:[self originalURL].absoluteString];
 }
 
-- (void)didAppear {
-    NSLog(@"....................did");
-}
+
+//- (void)willActivate {
+//    if (!_audioUrl) {
+//        return;
+//    }
+//    if ([[self currentAudioURL] isEqualToString:_audioUrl]) {
+//        [self playBtnTapped];
+//    } else {
+//        
+//        [self saveFileURL:_audioUrl];
+//    }
+//}
 
 
 - (void)willActivate {
-    NSLog(@"....................111");
     
     [super willActivate];
     
     if (_flag) {
         _flag = NO;
-        NSLog(@".........................return");
-        return;
-    }
-    
-    if (!_audioUrl) {
-        NSLog(@"....................333");
-        [self saveFileURL:[self originalURL].absoluteString];
-        [self.selectionLabel setText:@"4"];
-#warning alert
-        //当url没有的时候，提醒用户去一键开锁同步声纹
         return;
     }
 
-    NSLog(@"=========================  %@", [self currentSaveAudioURL].absoluteString);
-    
-    if ([_fileManager fileExistsAtPath:[self currentSaveAudioURL].absoluteString]) {
+    if ([_fileManager fileExistsAtPath:[self currentSaveAudioURL].path]) {
         if ([self currentAudioURL] && ![[self currentAudioURL] isEqualToString:_audioUrl]) {
             //appgroup的串如果有的话 跟路径不一致，就要重新下载
             [self saveFileURL:[self currentAudioURL]];
-            NSLog(@"...................K1");
             [self.selectionLabel setText:@"1"];
+            [self playBtnTapped];
         } else {
-            NSLog(@"...................K2");
             [self.selectionLabel setText:@"2"];
             [self playBtnTapped];
         }
-    } else {
-        NSLog(@".....................K3");
-        [self.selectionLabel setText:@"3"];
-        [self playBtnTapped];
     }
-
 }
 
 
@@ -125,22 +117,26 @@
     
     NSURL *saveUrl = [self currentSaveAudioURL];
     
-    if ([_fileManager fileExistsAtPath:saveUrl.absoluteString]) {
+    if ([_fileManager fileExistsAtPath:saveUrl.path]) {
         [_fileManager removeItemAtURL:saveUrl error:nil];
     }
     
     NSURLSessionConfiguration* configuration = [NSURLSessionConfiguration defaultSessionConfiguration];
     NSURLSession* session = [NSURLSession sessionWithConfiguration:configuration delegate:self delegateQueue:nil];
     
+    NSLog(@"aaaa................ %@", [NSURL URLWithString:url]);
     _task = [session dataTaskWithURL:[NSURL URLWithString:url] completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
+        NSLog(@"finish");
         dispatch_async(dispatch_get_main_queue(), ^{
             [data writeToURL:saveUrl atomically:YES];
         });
         if (error) {
 #warning alert
         //通知用户网络有异常，确保iPhone连接网络正常，且watch跟iPhone位置比较接近
+        } else {
+            NSLog(@".............play");
+            [self playBtnTapped];
         }
-        [self playBtnTapped];
     }];
     [_task resume];
     
@@ -174,17 +170,20 @@
 }
 
 - (void)playBtnTapped {
-    [self presentMediaPlayerControllerWithURL:[self currentSaveAudioURL] options:nil completion:^(BOOL didPlayToEnd, NSTimeInterval endTime, NSError * _Nullable error) {
-        
-    }];
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [self presentMediaPlayerControllerWithURL:[self originalURL] options:nil completion:^(BOOL didPlayToEnd, NSTimeInterval endTime, NSError * _Nullable error) {
+            
+        }];
+    });
+    
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
         sleep(3);
         [self dismissMediaPlayerController];
     });
+    
 }
 
 - (void)dismissMediaPlayerController {
-    NSLog(@".................dismiss");
     _flag = YES;
     [super dismissMediaPlayerController];
 }

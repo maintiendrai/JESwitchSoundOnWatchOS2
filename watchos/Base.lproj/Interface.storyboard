@@ -10,12 +10,12 @@
             <objects>
                 <controller id="AgC-eL-Hgc" customClass="InterfaceController">
                     <items>
-                        <label alignment="left" text="Label" id="7dX-Xr-vmn"/>
                         <button width="1" alignment="left" backgroundImage="watch_sound_button.png" id="WDJ-aM-t4x">
                             <connections>
                                 <action selector="playBtnPressed:" destination="AgC-eL-Hgc" id="dYa-GP-1Mp"/>
                             </connections>
                         </button>
+                        <label alignment="left" text="Label" id="7dX-Xr-vmn"/>
                     </items>
                     <connections>
                         <outlet property="selectionLabel" destination="7dX-Xr-vmn" id="YLu-Lc-Pq6"/>
