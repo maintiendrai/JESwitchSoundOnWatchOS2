@@ -82,6 +82,7 @@
         return;
     }
 
+    
     if ([_fileManager fileExistsAtPath:[self currentSaveAudioURL].path]) {
         if ([self currentAudioURL] && ![[self currentAudioURL] isEqualToString:_audioUrl]) {
             //appgroup的串如果有的话 跟路径不一致，就要重新下载
@@ -118,7 +119,7 @@
 #warning alert
         //通知用户网络有异常，确保iPhone连接网络正常，且watch跟iPhone位置比较接近
         } else {
-            [self playBtnTapped];
+//            [self playBtnTapped];
         }
     }];
     [_task resume];
@@ -145,6 +146,7 @@
 
 
 - (IBAction)playBtnPressed:(id)sender {
+    [self saveFileURL:[self originalURL].absoluteString];
     [self playBtnTapped];
 }
 
@@ -154,7 +156,7 @@
 
 - (void)playBtnTapped {
     dispatch_async(dispatch_get_main_queue(), ^{
-        [self presentMediaPlayerControllerWithURL:[self currentSaveAudioURL] options:nil completion:^(BOOL didPlayToEnd, NSTimeInterval endTime, NSError * _Nullable error) {
+        [self presentMediaPlayerControllerWithURL:[self originalURL] options:nil completion:^(BOOL didPlayToEnd, NSTimeInterval endTime, NSError * _Nullable error) {
             
         }];
     });
