@@ -84,7 +84,7 @@
     // with a single value and key called selectionString.
     //    if (segmentedControl.selectedSegmentIndex == 1) {
     //        title = @"http://7vzmkg.com1.z0.glb.clouddn.com/wave/1AAD605ED1A5EDEB.mp3";
-    title = @"http://7vzmkg.com1.z0.glb.clouddn.com/wave/7BEBA170DD7D22A4.mp3";
+    title = @"http://data.wei-ju.com.cn/wave/vcrmsdlkj2w8508uiq7l2.mp3";
     //    }
     [self.traditionalWormhole passMessageObject:@{@"selectionString" : title} identifier:@"selection"];
     [self.watchConnectivityWormhole passMessageObject:@{@"selectionString" : title} identifier:@"selection"];

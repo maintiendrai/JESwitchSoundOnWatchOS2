@@ -10,19 +10,15 @@
             <objects>
                 <controller id="AgC-eL-Hgc" customClass="InterfaceController">
                     <items>
-                        <button width="1" alignment="left" backgroundImage="watch_sound_button.png" id="WDJ-aM-t4x">
+                        <button alignment="center" verticalAlignment="center" backgroundImage="watch_sound_button_real.png" id="WDJ-aM-t4x">
                             <connections>
                                 <action selector="playBtnPressed:" destination="AgC-eL-Hgc" id="dYa-GP-1Mp"/>
                             </connections>
                         </button>
-                        <label alignment="left" text="Label" id="7dX-Xr-vmn"/>
                     </items>
-                    <connections>
-                        <outlet property="selectionLabel" destination="7dX-Xr-vmn" id="YLu-Lc-Pq6"/>
-                    </connections>
                 </controller>
             </objects>
-            <point key="canvasLocation" x="235" y="347"/>
+            <point key="canvasLocation" x="235" y="343"/>
         </scene>
         <!--Glance Interface Controller-->
         <scene sceneID="BOz-TT-tkC">
@@ -31,8 +27,7 @@
                     <items>
                         <group alignment="left" id="t8f-Gd-c4y">
                             <items>
-                                <label alignment="center" verticalAlignment="center" text="微居" textAlignment="justified" id="lqh-YV-RTE"/>
-                                <imageView width="40" height="40" alignment="left" image="watch_glance_icon.png" id="UKS-sm-gfc"/>
+                                <label alignment="left" verticalAlignment="center" text="微居" textAlignment="justified" id="lqh-YV-RTE"/>
                             </items>
                         </group>
                         <group alignment="left" id="uCw-4Q-Ouw">

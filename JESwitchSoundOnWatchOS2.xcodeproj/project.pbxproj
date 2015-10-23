@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		840B97D81BDA04B700C047EF /* watch_sound_button_real.png in Resources */ = {isa = PBXBuildFile; fileRef = 840B97D71BDA04B700C047EF /* watch_sound_button_real.png */; settings = {ASSET_TAGS = (); }; };
 		84161ACB1BD5E458003C6455 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 84161ACA1BD5E458003C6455 /* main.m */; };
 		84161ACE1BD5E458003C6455 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 84161ACD1BD5E458003C6455 /* AppDelegate.m */; };
 		84161AD11BD5E458003C6455 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84161AD01BD5E458003C6455 /* ViewController.m */; };
@@ -87,6 +88,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		840B97D71BDA04B700C047EF /* watch_sound_button_real.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = watch_sound_button_real.png; sourceTree = "<group>"; };
 		84161AC61BD5E458003C6455 /* JESwitchSoundOnWatchOS2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JESwitchSoundOnWatchOS2.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		84161ACA1BD5E458003C6455 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		84161ACC1BD5E458003C6455 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -278,6 +280,7 @@
 			isa = PBXGroup;
 			children = (
 				848EB9411BD71DCD00B2A1FD /* watch_glance_icon.png */,
+				840B97D71BDA04B700C047EF /* watch_sound_button_real.png */,
 				84161B301BD5EA25003C6455 /* watch_sound_button.png */,
 				84161B311BD5EA25003C6455 /* watch_sound_button_h.png */,
 			);
@@ -426,6 +429,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				84161B331BD5EA25003C6455 /* watch_sound_button_h.png in Resources */,
+				840B97D81BDA04B700C047EF /* watch_sound_button_real.png in Resources */,
 				84161B321BD5EA25003C6455 /* watch_sound_button.png in Resources */,
 				84161AE81BD5E4AC003C6455 /* Assets.xcassets in Resources */,
 				848EB9421BD71DCD00B2A1FD /* watch_glance_icon.png in Resources */,
